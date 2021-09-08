@@ -1,16 +1,21 @@
 import ProductData from "../data/ProductData.js";
 import Cards from "./Cards.js";
-import React from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const Shop = () => {
+    let productCards = [];
+    ProductData.map(club => {
+        productCards.push(
+            <Link to="/shop/adasdsa">
+                <Cards item={club}/>
+            </Link>
+        )
+    })
     return (
         <div className="shop">
             Shop your favourite products here
             <div className="listOfProducts">
-                {/* {ProductData.forEach((team) => {
-                    <Cards item={team} />
-                })} */}
-                <Cards item={ProductData[0]} />
+                {productCards}
             </div>
         </div>
     )
