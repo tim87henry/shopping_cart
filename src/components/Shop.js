@@ -6,7 +6,7 @@ const Shop = () => {
     let productCards = [];
     ProductData.map(club => {
         productCards.push(
-            <Link to="/shop/adasdsa">
+            <Link to={`/shop/${club.id}`}>
                 <Cards item={club}/>
             </Link>
         )
