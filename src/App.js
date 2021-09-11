@@ -11,8 +11,11 @@ function App() {
 
   const addItems = (index, quantity) => {
     let currentItems = cartItems;
-    cartItems.push([index,quantity]);
-    //setCartItems(currentItems);
+    console.log("INSIDE function "+cartItems)
+    //cartItems.push([index,quantity]);
+    currentItems.push([index,quantity]);
+    setCartItems(currentItems);
+    console.log("CHECKING "+cartItems)
   }
 
   return (
@@ -23,7 +26,7 @@ function App() {
         <Switch>
           <Route path="/home" render={() => <Home cartItems={cartItems} />} />
           <Route path="/shop" exact render={() => <Shop cartItems={cartItems} />} />
-          <Route path="/shop/:id" render={({match}) => <Product cartItems={cartItems} match={match.params.id} addItems={addItems}/>} />
+          <Route path="/shop/:id" render={({match}) => <Product cartItems={cartItems} match={match.params.id} addItems={addItems} />} />
           <Route path="/cart" render={() => <Cart cartItems={cartItems}/>} />
         </Switch>
       </BrowserRouter>

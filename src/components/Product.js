@@ -1,15 +1,18 @@
 import {Link} from "react-router-dom";
+import { useState } from "react";
 import ProductData from "../data/ProductData.js";
 
 const Product = (props) => {
     let itemId = props.match - 1;
-    //console.log("It's "+props.addItem)
+    const [quantity, setQuantity] = useState(1);
     return (
         <div className="productDetails">
             <img src={ProductData[itemId].image} alt="" height="300px"></img>
             {ProductData[itemId].descr}
+            <label for="quantity">Qty :</label>
+            <input type="number" id="quantity" name="quantity" step="1" onChange={event => setQuantity(event.target.value)}/>
             <Link to="/cart">
-                <button onClick={props.addItems(itemId,1)}>Add to Cart</button>
+                <button onClick={() => {props.addItems(itemId,quantity)}}>Add to Cart</button>
             </Link>
         </div>
     )
