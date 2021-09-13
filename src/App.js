@@ -5,18 +5,44 @@ import React, { useState } from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Product from "./components/Product.js";
 import Cart from "./components/Cart.js";
+import Checkout from "./components/Checkout.js"
 
 function App() {
   const [cartItems, setCartItems] = useState([])
 
   const addItems = (index, quantity) => {
     let currentItems = cartItems;
-    console.log("INSIDE function "+cartItems)
-    //cartItems.push([index,quantity]);
-    currentItems.push([index,quantity]);
+    currentItems.push({
+      "index": index,
+      "quantity": quantity
+    });
     setCartItems(currentItems);
-    console.log("CHECKING "+cartItems)
   }
+
+  const changeQuantity = (index, operator) => {
+    let currentItems = [];
+    for(let i=0;i<cartItems.length;i++) {
+      if (index === cartItems[i]["index"]) {
+        let quantity = cartItems[i]["quantity"];
+        if (quantity === 1 && operator === "subtract") {
+          quantity=1;
+        } else {
+          quantity = (operator==="add")? quantity+1 : quantity-1;
+        }
+        currentItems.push({
+          "index": cartItems[i]["index"],
+          "quantity": quantity
+        });
+      } else {
+        currentItems.push(cartItems[i]);
+      }
+    }
+    setCartItems(currentItems)
+  };
+
+  const emptyCart = () => {
+    setCartItems([]);
+  };
 
   return (
     <div className="App">
@@ -27,7 +53,8 @@ function App() {
           <Route path="/home" render={() => <Home cartItems={cartItems} />} />
           <Route path="/shop" exact render={() => <Shop cartItems={cartItems} />} />
           <Route path="/shop/:id" render={({match}) => <Product cartItems={cartItems} match={match.params.id} addItems={addItems} />} />
-          <Route path="/cart" render={() => <Cart cartItems={cartItems}/>} />
+          <Route path="/cart" render={() => <Cart cartItems={cartItems} emptyCart={emptyCart} changeQuantity={changeQuantity} />} />
+          <Route path="/checkout" render={() => <Checkout />} />
         </Switch>
       </BrowserRouter>
     </div>
