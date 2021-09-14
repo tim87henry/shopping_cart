@@ -10,11 +10,11 @@ import Checkout from "./components/Checkout.js"
 function App() {
   const [cartItems, setCartItems] = useState([])
 
-  const addItems = (index, quantity) => {
+  const addItems = (index) => {
     let currentItems = cartItems;
     currentItems.push({
       "index": index,
-      "quantity": quantity
+      "quantity": 1
     });
     setCartItems(currentItems);
   }

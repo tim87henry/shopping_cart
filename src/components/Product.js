@@ -1,19 +1,25 @@
 import {Link} from "react-router-dom";
-import { useState } from "react";
 import ProductData from "../data/ProductData.js";
 
 const Product = (props) => {
-    let itemId = props.match - 1;
-    //const [quantity, setQuantity] = useState(1);
+    let itemId = props.match;
+    let itemAdded = false;
+    let cartEmpty = (props.cartItems.length > 0)? false: true;
+    for (let i=0; i<props.cartItems.length; i++) {
+        if (props.cartItems[i].index === itemId) {
+            itemAdded = true;
+        }
+    }
+
     return (
         <div className="productDetails">
             <img src={ProductData[itemId].image} alt="" height="300px"></img>
-            {ProductData[itemId].descr}
-            {/* <label for="quantity">Qty :</label>
-            <input type="number" id="quantity" name="quantity" step="1" onChange={event => setQuantity(event.target.value)}/> */}
+            <b>{ProductData[itemId].title}</b>
+            <p>{ProductData[itemId].descr}</p>
+            <p>${ProductData[itemId].price}</p>
             <Link to="/cart">
-                <button onClick={() => {props.addItems(itemId,1);let tester="1"}}>Add to Cart</button>
-                <button id="checkoutButton">Checkout</button>
+                <button onClick={() => {props.addItems(itemId)}} disabled={itemAdded}>Add to Cart</button>
+                <button id="checkoutButton" disabled={cartEmpty}>Checkout</button>
             </Link>
         </div>
     )
