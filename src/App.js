@@ -5,7 +5,8 @@ import React, { useState } from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Product from "./components/Product.js";
 import Cart from "./components/Cart.js";
-import Checkout from "./components/Checkout.js"
+import Checkout from "./components/Checkout.js";
+import "./styles/style.css";
 
 function App() {
   const [cartItems, setCartItems] = useState([])
@@ -46,7 +47,6 @@ function App() {
 
   return (
     <div className="App">
-      <p>Hello</p>
       <BrowserRouter>
         <Navbar />
         <Switch>

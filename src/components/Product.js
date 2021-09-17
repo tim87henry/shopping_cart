@@ -13,14 +13,16 @@ const Product = (props) => {
 
     return (
         <div className="productDetails">
-            <img src={ProductData[itemId].image} alt="" height="300px"></img>
-            <b>{ProductData[itemId].title}</b>
-            <p>{ProductData[itemId].descr}</p>
-            <p>${ProductData[itemId].price}</p>
-            <Link to="/cart">
-                <button onClick={() => {props.addItems(itemId)}} disabled={itemAdded}>Add to Cart</button>
-                <button id="checkoutButton" disabled={cartEmpty}>Checkout</button>
-            </Link>
+            <img src={ProductData[itemId].image} alt="" className="productImage"></img>
+            <div className="productInfo">
+                <b className="productTitle">{ProductData[itemId].title}</b>
+                <p className="productDesc">{ProductData[itemId].descr}</p>
+                <p className="productPrice">${ProductData[itemId].price}</p>
+                <Link to="/cart">
+                    <button onClick={() => {props.addItems(itemId)}} disabled={itemAdded} className="button">Add to Cart</button>
+                    <button id="checkoutButton" disabled={cartEmpty}  className="button">Checkout</button>
+                </Link>
+            </div>
         </div>
     )
 }

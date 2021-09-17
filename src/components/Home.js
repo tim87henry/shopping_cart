@@ -1,7 +1,9 @@
+import "../styles/style.css";
+
 const Home = () => {
     return (
         <div className="home">
-            Welcome to our store
+            Welcome to The Jersey Store
         </div>
     )
 }
