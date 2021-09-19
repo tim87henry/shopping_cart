@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/shopping_cart/static/css/main.ca75eac0.chunk.css",
+    "main.js": "/shopping_cart/static/js/main.ca6ea946.chunk.js",
+    "main.js.map": "/shopping_cart/static/js/main.ca6ea946.chunk.js.map",
+    "runtime-main.js": "/shopping_cart/static/js/runtime-main.a2dd2310.js",
+    "runtime-main.js.map": "/shopping_cart/static/js/runtime-main.a2dd2310.js.map",
+    "static/js/2.8c6ccdcd.chunk.js": "/shopping_cart/static/js/2.8c6ccdcd.chunk.js",
+    "static/js/2.8c6ccdcd.chunk.js.map": "/shopping_cart/static/js/2.8c6ccdcd.chunk.js.map",
+    "index.html": "/shopping_cart/index.html",
+    "static/css/main.ca75eac0.chunk.css.map": "/shopping_cart/static/css/main.ca75eac0.chunk.css.map",
+    "static/js/2.8c6ccdcd.chunk.js.LICENSE.txt": "/shopping_cart/static/js/2.8c6ccdcd.chunk.js.LICENSE.txt",
+    "static/media/arsenal.1688e1c6.jpg": "/shopping_cart/static/media/arsenal.1688e1c6.jpg",
+    "static/media/barca.851c391a.gif": "/shopping_cart/static/media/barca.851c391a.gif",
+    "static/media/chelsea.33c5720b.jpg": "/shopping_cart/static/media/chelsea.33c5720b.jpg",
+    "static/media/city.37ad3b67.jpg": "/shopping_cart/static/media/city.37ad3b67.jpg",
+    "static/media/dortmund.8d68ac18.jpg": "/shopping_cart/static/media/dortmund.8d68ac18.jpg",
+    "static/media/juve.24e7ae67.jpg": "/shopping_cart/static/media/juve.24e7ae67.jpg",
+    "static/media/liverpool.07cf0e42.gif": "/shopping_cart/static/media/liverpool.07cf0e42.gif",
+    "static/media/milan_away.fb3fa1d2.jpg": "/shopping_cart/static/media/milan_away.fb3fa1d2.jpg",
+    "static/media/milan_home.4de193d5.jpg": "/shopping_cart/static/media/milan_home.4de193d5.jpg",
+    "static/media/psg.d851e69e.jpg": "/shopping_cart/static/media/psg.d851e69e.jpg",
+    "static/media/spurs.ca41fc69.gif": "/shopping_cart/static/media/spurs.ca41fc69.gif",
+    "static/media/united.d82a9a8d.jpg": "/shopping_cart/static/media/united.d82a9a8d.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a2dd2310.js",
+    "static/js/2.8c6ccdcd.chunk.js",
+    "static/css/main.ca75eac0.chunk.css",
+    "static/js/main.ca6ea946.chunk.js"
+  ]
+}
